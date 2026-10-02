@@ -26,7 +26,7 @@ Holders connect a wallet, sign a message (no gas), pick a skin and a region, and
 | Skin catalogue (names, RP prices, availability) | Real — dated snapshot, 1,825 skins |
 | Wallet connection, wallet sign-in | Real (EIP-6963 + signed message; app deep links and install links when no wallet is present) |
 | Regions, rewards, code delivery | Real, run by the operator in `/admin` |
-| Skin artwork | Off by default — see `NEXT_PUBLIC_SKIN_ART` in `.env.example` |
+| Skin artwork | On by default, hot-linked from Data Dragon; `NEXT_PUBLIC_SKIN_ART=off` disables it. Not cleared with Riot |
 | Token balances, automatic fee accounting ("The pot") | Need the chain + token address |
 
 `node scripts/verify-api.mjs` replays the whole loop over HTTP with throwaway wallets (run it against a scratch `SKINFUND_DATA_DIR`).

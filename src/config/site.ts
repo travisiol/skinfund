@@ -10,14 +10,16 @@ export const SITE = {
 /**
  * Skin artwork source.
  *
- * "ddragon" hot-links Riot's Data Dragon CDN with ids verified in the
- * catalogue snapshot. It is OFF unless NEXT_PUBLIC_SKIN_ART=ddragon, because
- * Riot's asset terms have to be cleared first: the developer policy that
- * governs Data Dragon requires product registration and states "No
- * cryptocurrencies, no blockchain". With it off, cards render an explicit
- * "artwork not enabled" plate — never a stand-in image.
+ * Artwork is hot-linked from Riot's Data Dragon CDN with ids verified in the
+ * catalogue snapshot. It is ON by default, by the owner's decision; set
+ * NEXT_PUBLIC_SKIN_ART=off to switch it off (cards then render an explicit
+ * "artwork not enabled" plate — never a stand-in image).
+ *
+ * Known risk, not cleared: the developer policy that governs Data Dragon
+ * requires product registration and states "No cryptocurrencies, no
+ * blockchain". Riot can ask for the artwork to be removed.
  */
-export const SKIN_ART: "ddragon" | "none" = process.env.NEXT_PUBLIC_SKIN_ART === "ddragon" ? "ddragon" : "none";
+export const SKIN_ART: "ddragon" | "none" = process.env.NEXT_PUBLIC_SKIN_ART === "off" ? "none" : "ddragon";
 
 const DDRAGON = "https://ddragon.leagueoflegends.com/cdn/img/champion";
 
